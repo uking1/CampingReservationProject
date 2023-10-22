@@ -23,9 +23,9 @@ public class MenuViewer {
 		System.out.println();
 		System.out.println("예약할 사이트 메뉴 번호를 선택하세요.");
 		System.out.println("1. 사이트 정보 목록");
-		System.out.println("2. 예약할 사이트 선택");
-		System.out.println("3. 예약 정보 수정");
-		System.out.println("4. 예약 정보 취소하기");
+		System.out.println("2. 사이트 선택");
+		System.out.println("3. 사이트 정보 수정");
+		System.out.println("4. 사이트 정보 삭제하기");
 		System.out.println("5. 메인으로 돌아가기");
 		System.out.print("번호 선택 : ");
 		

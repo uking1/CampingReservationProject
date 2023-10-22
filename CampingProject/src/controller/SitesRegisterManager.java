@@ -21,7 +21,8 @@ public class SitesRegisterManager {
 
 		SitesDAO sd = new SitesDAO();
 		SitesVO svo = new SitesVO();
-
+		
+		int no; // 사이트 일련번호
 		String site_id; // 사이트 구역
 		String site_num; // 사이트 번호
 		String site_size; // 사이트 크기
@@ -30,7 +31,10 @@ public class SitesRegisterManager {
 		sd.getSitesTotalList();
 		System.out.println();
 
-		System.out.println("사이트 정보 입력 :");
+		System.out.println("사이트 정보 입력 ");
+		System.out.println("일련번호 : ");
+		no = Integer.parseInt(scan.nextLine());
+		
 		System.out.print("사이트 구역 : ");
 		site_id = scan.nextLine();
 		System.out.println("사이트 번호 : ");
@@ -112,7 +116,7 @@ public class SitesRegisterManager {
 		System.out.print("일련번호 : ");
 		no = scan.nextInt();
 
-		sd.setSitesUpdate(svo);
+		sd.setSitesDelete(no);
 
 		System.out.println();
 		System.out.println("사이트 전체 목록");

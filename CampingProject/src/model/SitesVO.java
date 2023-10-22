@@ -9,9 +9,11 @@ public class SitesVO {
 	private String site_size; // 사이트 크기
 
 	public SitesVO() {
-
+		super();
 	}
 
+	
+	
 	public SitesVO(int no, String site_id, String site_num, String site_size) {
 		super();
 		this.no = no;
