@@ -15,14 +15,14 @@ public class DBUtil {
         try {
             // JDBC 드라이버 로드
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            System.out.println("드라이버 적재 성공");
+//            System.out.println("드라이버 적재 성공");
             // DB 연결
             con = DriverManager.getConnection(url, user, password);
-            System.out.println("오라클 접속 성공");
+//            System.out.println("오라클 접속 성공");
         } catch (ClassNotFoundException e) {
-            System.out.println("드라이버를 찾을 수 없습니다.");
+//            System.out.println("드라이버를 찾을 수 없습니다.");
         } catch (SQLException e) {
-            System.out.println("오라클 연결에 실패했습니다.");
+//            System.out.println("오라클 연결에 실패했습니다.");
             e.printStackTrace();
         }
         return con;

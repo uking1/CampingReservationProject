@@ -16,7 +16,7 @@ public class SitesRegisterManager {
 	}
 
 	// 사이트 등록 관리
-	public void sitesRegistr() throws Exception {
+	public void sitesRegister() throws Exception {
 		Scanner scan = new Scanner(System.in);
 
 		SitesDAO sd = new SitesDAO();

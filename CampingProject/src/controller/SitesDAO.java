@@ -100,10 +100,10 @@ public class SitesDAO {
 
 			con = DBUtil.makeConnection();
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, svo.getSite_id());
-			pstmt.setString(2, svo.getSite_num());
-			pstmt.setString(3, svo.getSite_size());
-			pstmt.setInt(4, svo.getNo());
+			pstmt.setString(1, svo.getSite_id()); // 사이트 아이디
+			pstmt.setString(2, svo.getSite_num()); // 사이트 번호
+			pstmt.setString(3, svo.getSite_size()); // 사이트 크기
+			pstmt.setInt(4, svo.getNo()); // 사이트 일련번호
 			
 			int i = pstmt.executeUpdate();
 

@@ -1,6 +1,10 @@
 package main;
 
+import java.awt.Menu;
+
+import controller.InfoRegisterManager;
 import controller.SitesRegisterManager;
+import view.INFO_CHOICE;
 import view.MENU_CHOICE;
 import view.MenuViewer;
 import view.SITES_CHOICE;
@@ -28,7 +32,7 @@ public class CampingReservationProjectMain {
 					SitesMenu();
 					break;
 				case MENU_CHOICE.INFO:
-//					InfoMenu();
+					InfoMenu();
 					break;
 				case MENU_CHOICE.RESERVATION:
 //					ReservationMenu();
@@ -50,6 +54,35 @@ public class CampingReservationProjectMain {
 
 	}
 
+	public static void InfoMenu() throws Exception{
+		int choice;
+		
+		InfoRegisterManager infoManager = new InfoRegisterManager();
+		MenuViewer.reservationInfoMenuView();
+		choice = MenuViewer.scan.nextInt();
+		MenuViewer.scan.nextLine();
+		
+		switch(choice) {
+		case INFO_CHOICE.LIST :
+			System.out.println("");
+			infoManager.infoTotalList();
+			break;
+		case INFO_CHOICE.INSERT :
+			System.out.println("");
+			infoManager.infoRegister();
+			break;
+		case INFO_CHOICE.UPDATE :
+			System.out.println("");
+			infoManager.InfoUpdate();
+			break;
+		case INFO_CHOICE.MAIN :
+			return;
+		default :
+			System.out.println("정확한 숫자를 입력해주세요.");
+		}
+		
+	}
+
 	public static void SitesMenu() throws Exception {
 		int num;
 		SitesRegisterManager sitesManger = new SitesRegisterManager ();
@@ -64,7 +97,7 @@ public class CampingReservationProjectMain {
 			break;
 		case SITES_CHOICE.INSERT :
 			System.out.println("");
-			sitesManger.sitesRegistr();
+			sitesManger.sitesRegister();
 			break;
 		case SITES_CHOICE.UPDATE :
 			System.out.println("");
