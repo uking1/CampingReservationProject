@@ -2,15 +2,11 @@ package main;
 
 import java.awt.Menu;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
-
 import controller.InfoRegisterManager;
-import controller.ReservationRegisterManager;
 import controller.SitesRegisterManager;
 import view.INFO_CHOICE;
 import view.MENU_CHOICE;
 import view.MenuViewer;
-import view.RESERVATION_CHOICE;
 import view.SITES_CHOICE;
 
 public class CampingReservationProjectMain {
@@ -39,7 +35,7 @@ public class CampingReservationProjectMain {
 					InfoMenu();
 					break;
 				case MENU_CHOICE.RESERVATION:
-					ReservationMenu();
+//					ReservationMenu();
 					break;
 				case MENU_CHOICE.EXIT:
 					flag = true;
@@ -56,34 +52,6 @@ public class CampingReservationProjectMain {
 			}
 		}
 
-	}
-
-	public static void ReservationMenu() throws Exception{
-		int choice;
-		
-		ReservationRegisterManager reservationManger = new ReservationRegisterManager();
-		MenuViewer.reservationMenuView();
-		choice = MenuViewer.scan.nextInt();
-		MenuViewer.scan.nextLine();
-		
-		switch(choice) {
-		case RESERVATION_CHOICE.LIST :
-			System.out.println("");
-			reservationManger.ReservationList();
-			break;
-		case RESERVATION_CHOICE.INSERT :
-			System.out.println("");
-			reservationManger.reservationRegister();
-			break;
-		case RESERVATION_CHOICE.DELETE :
-			System.out.println("");
-			reservationManger.ReservationDelete();
-		case RESERVATION_CHOICE.MAIN :
-			return;
-		default : 
-			System.out.println("올바른 숫자를 입력해주세요.");
-		}
-		
 	}
 
 	public static void InfoMenu() throws Exception{

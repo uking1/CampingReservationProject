@@ -8,9 +8,9 @@ import java.sql.Statement;
 public class DBUtil {
     public static Connection makeConnection() {
         // 오라클 DB 연결 정보
-        String url = "jdbc:oracle:thin:@220.116.171.231:1521/xe";
+        String url = "jdbc:oracle:thin:@220.116.53.98:1521/xe";
         String user = "system";
-        String password = "system";
+        String password = "123456";
         Connection con = null;
         try {
             // JDBC 드라이버 로드
