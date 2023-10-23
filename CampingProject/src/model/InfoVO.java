@@ -86,4 +86,9 @@ public class InfoVO {
 		return ivo.no == this.no && ivo.phone.equals(this.phone) && ivo.reservation_id.equals(this.reservation_id);
 	}
 
+	@Override
+	public String toString() {
+	    return "[성함=" + name + ", 연락처=" + phone + ", 예약일=" + reservation_date + "]";
+	}
+
 }

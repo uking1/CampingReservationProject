@@ -4,22 +4,18 @@ import java.util.Objects;
 
 public class ReservationVO {
 	private int no; // 예약 일련번호
-	private String reservation_id; // 예약자 아이디
 	private String site_id; // 사이트 아이디
-	private String date; // 예약일자
-	private String r_date; // 예약 작성일자
+	private String site_num; // 사이트 번호
 
 	public ReservationVO() {
 
 	}
 
-	public ReservationVO(int no, String reservation_id, String site_id, String date, String r_date) {
+	public ReservationVO(int no, String site_id, String site_num) {
 		super();
 		this.no = no;
-		this.reservation_id = reservation_id;
 		this.site_id = site_id;
-		this.date = date;
-		this.r_date = r_date;
+		this.site_num = site_num;
 	}
 
 	public int getNo() {
@@ -30,14 +26,6 @@ public class ReservationVO {
 		this.no = no;
 	}
 
-	public String getReservation_id() {
-		return reservation_id;
-	}
-
-	public void setReservation_id(String reservation_id) {
-		this.reservation_id = reservation_id;
-	}
-
 	public String getSite_id() {
 		return site_id;
 	}
@@ -46,33 +34,26 @@ public class ReservationVO {
 		this.site_id = site_id;
 	}
 
-	public String getDate() {
-		return date;
+	public String getSite_num() {
+		return site_num;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
-	}
-
-	public String getR_date() {
-		return r_date;
-	}
-
-	public void setR_date(String r_date) {
-		this.r_date = r_date;
+	public void setSite_num(String site_num) {
+		this.site_num = site_num;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(no, reservation_id, site_id);
+		return Objects.hash(no, site_id, site_num);
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		ReservationVO rvo = (ReservationVO) obj;
-		if (!(obj instanceof ReservationVO))
+		if (this == obj)
+			return true;
+		if (obj == null || getClass() != obj.getClass())
 			return false;
-		return rvo.no == this.no && rvo.reservation_id.equals(this.reservation_id) && rvo.site_id.equals(this.site_id);
+		ReservationVO rvo = (ReservationVO) obj;
+		return no == rvo.no && Objects.equals(site_num, rvo.site_num) && Objects.equals(site_id, rvo.site_id);
 	}
-
 }
