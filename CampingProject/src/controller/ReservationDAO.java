@@ -27,7 +27,7 @@ public class ReservationDAO {
 			}else {
 				System.out.println("예약에 실패했습니다.");
 			}
-			
+			//
 			
 		}catch(SQLException se) {
 			System.out.println(se);
